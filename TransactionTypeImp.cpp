@@ -2,6 +2,14 @@
 #include "TransactionType.h"
 using namespace std;
 
+//initalize values in default constructor
+TransactionType::TransactionType(){
+    ID = "blank id";
+    deposit = 0;
+    withdrawal = 0;
+    endingTotal = 0;
+}
+
 //parameterized constructor
 TransactionType::TransactionType(string id, double deposit, 
                                 double withdrawal, double endingTotal):
