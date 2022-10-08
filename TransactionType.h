@@ -10,6 +10,8 @@ class TransactionType{
         double withdrawal;
         double endingTotal;
     public:
+        //default constructor
+        TransactionType();
         //parameterized constructor to set members
         TransactionType(string id, double deposit, double withdrawal, double endingTotal);
         //print summary of transaction details
