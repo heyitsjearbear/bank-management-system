@@ -10,6 +10,17 @@ TransactionType::TransactionType(){
     endingTotal = 0;
 }
 
+//setter function to set transaction details
+void TransactionType::setTransaction(string id, double depo, 
+                                double withdraw, double endTot){
+    
+    ID = id;
+    deposit = depo;
+    withdrawal = withdraw;
+    endingTotal = endTot;
+}
+                                    
+
 //parameterized constructor
 TransactionType::TransactionType(string id, double deposit, 
                                 double withdrawal, double endingTotal):

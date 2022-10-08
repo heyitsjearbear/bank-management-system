@@ -16,6 +16,9 @@ class TransactionType{
         TransactionType(string id, double deposit, double withdrawal, double endingTotal);
         //print summary of transaction details
         void printSummary() const;
+
+        //setter function to set member variables
+        void setTransaction(string id, double deposit, double withdrawal, double endingTotal);
         //getter functions for members
         
 };
