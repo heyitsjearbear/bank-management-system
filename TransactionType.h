@@ -11,7 +11,7 @@ class TransactionType{
         double endingTotal;
     public:
         //parameterized constructor to set members
-        TransactionType(string id, string deposit, string withdrawal, double endingTotal);
+        TransactionType(string id, double deposit, double withdrawal, double endingTotal);
         //print summary of transaction details
         void printSummary() const;
         //getter functions for members
