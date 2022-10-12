@@ -1,0 +1,8 @@
+IN ORDER OF IMPORTANCE
+
+1.) Implement do-while loop to keep asking user if they want to deposit. if they say no then stop 
+prompting.
+2.) Do the above, but for withdrawal
+) if user selects that they are new append to a file
+) if user selects they are returning read their details from file
+and edit their file
