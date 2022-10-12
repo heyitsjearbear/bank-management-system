@@ -25,9 +25,19 @@ void TransactionType::setDeposit(double depo){
             deposit+=depo;
 }
 
+//setter withdrawal function
+void TransactionType::setWithDrawal(double withdraw){
+            withdrawal+=withdraw;
+}
+
 // retrieve deposit number
 double TransactionType::getDeposit() const{
     return deposit;
+}
+
+// retrieve withdrawal number
+double TransactionType::getWithdrawal() const{
+    return withdrawal;
 }
                                     
 

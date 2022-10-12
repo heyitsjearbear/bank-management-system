@@ -21,10 +21,16 @@ class TransactionType{
         void setTransaction(string id, double depo, double withdraw);
         //set deposit
         void setDeposit(double depo);
+
+        // set withdrawal
+        void setWithDrawal(double withdraw);
         //getter functions for members
 
         //retrieve deposit
         double getDeposit() const;
+
+        // retrieve withdraw
+        double getWithdrawal() const;
         
 };
 
