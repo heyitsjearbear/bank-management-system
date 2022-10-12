@@ -60,6 +60,13 @@ int main(){
         cin >> userDepoChoice;
         cout << endl;
     } while (userDepoChoice == "Y" || userDepoChoice == "y");
+
+    do{
+        transaction.setWithDrawal(askWithDrawal());
+        cout << "\nWould you like to withdraw again\nType 'y' or 'Y' to withdraw again.\n"; 
+        cin >> userWithdrawChoice;
+        cout << endl;
+    } while (userWithdrawChoice == "Y" || userWithdrawChoice == "y");
  
     
     cout << endl;
