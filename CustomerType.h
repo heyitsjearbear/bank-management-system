@@ -15,7 +15,7 @@ class CustomerType{
         void setName(string first, string last);
         string getFirstsName() const;
         string getLastName() const;
-        CustomerType(TransactionType tobj, string first = "first", string last = "last");
+        CustomerType(TransactionType &tobj, string first = "first", string last = "last");
     
 
 

@@ -16,7 +16,7 @@ string CustomerType::getLastName() const{
 }
 
 //parameterized constructor
-CustomerType::CustomerType(TransactionType tobj, string first, string last){
+CustomerType::CustomerType(TransactionType &tobj, string first, string last){
     firstName = first;
     lastName = last;
     transaction = tobj;

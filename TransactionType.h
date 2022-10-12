@@ -13,13 +13,18 @@ class TransactionType{
         //default constructor
         TransactionType();
         //parameterized constructor to set members
-        TransactionType(string id, double deposit, double withdrawal, double endingTotal);
+        TransactionType(string id, double depo, double withdraw);
         //print summary of transaction details
         void printSummary() const;
 
         //setter function to set member variables
-        void setTransaction(string id, double deposit, double withdrawal, double endingTotal);
+        void setTransaction(string id, double depo, double withdraw);
+        //set deposit
+        void setDeposit(double depo);
         //getter functions for members
+
+        //retrieve deposit
+        double getDeposit() const;
         
 };
 
