@@ -4,3 +4,10 @@
     POSSIBLE SOLUTIONS:
     - Maybe run a do while that always ask the user at the beginning what they want to do. Then when they finally
     - hit the exit button then terminate the program
+FIXED
+
+
+10/13/2022: 4:35PM
+    Ran into a problem where account balance isn't printing out properly.
+    POSSIBLE SOLUTIONS:
+    -look at print summary function for transaction type class.

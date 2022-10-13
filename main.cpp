@@ -21,10 +21,25 @@ double askWithDrawal(){
     return amt;
 }
 
+int userChoice(){
+    int selection;
+    //cout << setfill('#') << setw(10) << endl;
+    cout << "Hello, pick the corresponding the number what you want to do\n";
+    cout << "1.) Withdraw\n2.) Deposit\n3.) Print Account Balance\n4.) Exit Application\n";
+    cout << "What would you like to do: ";
+    cin >> selection;
+    return selection;
+
+
+}
+
 int main(){
     //create transaction object
     TransactionType transaction;
     string first, last;
+
+    //declare and initialize variable that stores user's selection
+    int Userselection = 0;
 
     //declare and initialize userDepoChoice/userWithdrawChoice
     string userDepoChoice = " ";
@@ -42,33 +57,29 @@ int main(){
     customer.printName();
     cout << endl;
     
-    // test to see if deposit is updated
-    // transaction.setDeposit(askDeposit());
-    // transaction.setDeposit(askDeposit());
-
-    // test to see if withdrawal is updated
-    // transaction.setWithDrawal(askWithDrawal());
-    // transaction.setWithDrawal(askWithDrawal());
-
-    // test to see how much you deposited and withdrawed
-    // cout << "this is how much you deposited: " << transaction.getDeposit() << endl;
-    // cout << "this is how much you withdrawed: " << transaction.getWithdrawal() << endl;
-
     do{
-        transaction.setDeposit(askDeposit());
-        cout << "\nWould you like to deposit again\nType 'y' or 'Y' to deposit again.\n"; 
-        cin >> userDepoChoice;
-        cout << endl;
-    } while (userDepoChoice == "Y" || userDepoChoice == "y");
+        Userselection = userChoice();
+        switch (Userselection){
+            case 1:
+                cout << endl;
+                transaction.setWithDrawal(askWithDrawal());
+                break;
+            case 2:
+                cout << endl;
+                transaction.setDeposit(askDeposit());
+                break;
+            case 3:
+                cout << endl;
+                transaction.printSummary();
+            case 4: 
+                break;
+            default:
+                cout << "Invalid selection, please try again.\n";
+                break;
 
-    do{
-        transaction.setWithDrawal(askWithDrawal());
-        cout << "\nWould you like to withdraw again\nType 'y' or 'Y' to withdraw again.\n"; 
-        cin >> userWithdrawChoice;
-        cout << endl;
-    } while (userWithdrawChoice == "Y" || userWithdrawChoice == "y");
- 
-    
-    cout << endl;
+        }
+
+
+    } while(Userselection!=4);
     return 0;
 }

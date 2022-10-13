@@ -5,7 +5,7 @@ using namespace std;
 //initalize values in default constructor
 TransactionType::TransactionType(){
     ID = "blank id";
-    deposit = 0;
+    deposit = 100;
     withdrawal = 0;
     endingTotal = 0;
 }
@@ -51,8 +51,5 @@ TransactionType::TransactionType(string id, double depo,
 
 // print summary of transaction details
 void TransactionType::printSummary() const{
-    cout << "Transaction ID: " << ID << endl;
-    //cout << "Deposit Amount: " << deposit << endl;
-    //cout << "Withdrawal Amount: " << withdrawal << endl;
     cout << "Account Balance after this session: " << endingTotal << endl;
 }
