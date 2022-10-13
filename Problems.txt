@@ -1,0 +1,6 @@
+- 10/13/2022: 3:25pm
+    I'm trying to implement a function that outputs the "main screen" of the application.
+    This output is supposed to ask the user if they would like to deposit, withdraw, or exit app.
+    POSSIBLE SOLUTIONS:
+    - Maybe run a do while that always ask the user at the beginning what they want to do. Then when they finally
+    - hit the exit button then terminate the program
