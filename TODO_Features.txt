@@ -1,7 +1,7 @@
 IN ORDER OF IMPORTANCE
 
 - Functions to handle invalid input
-- Work on big function to ask user for what they want to do i.e deposit, withraw, end transaction.
+- Work on big function to ask user for what they want to do i.e deposit, withraw, end application.
 - if user selects that they are new append to a file
 - if user selects they are returning read their details from file
 and edit their file

@@ -22,6 +22,9 @@ class TransactionType{
         //set deposit
         void setDeposit(double depo);
 
+        //setter for setting end balance
+        void setEndTotal(double end);
+
         // set withdrawal
         void setWithDrawal(double withdraw);
         //getter functions for members
@@ -31,6 +34,9 @@ class TransactionType{
 
         // retrieve withdraw
         double getWithdrawal() const;
+
+        //retrieve ending total
+        double getEndBalance() const;
         
 };
 

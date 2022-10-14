@@ -23,10 +23,11 @@ double askWithDrawal(){
 
 int userChoice(){
     int selection;
-    //cout << setfill('#') << setw(10) << endl;
-    cout << "Hello, pick the corresponding the number what you want to do\n";
+    cout <<  setfill('#') << setw(60) << '#';
+    cout << "\nHello, pick the corresponding the number what you want to do\n";
     cout << "1.) Withdraw\n2.) Deposit\n3.) Print Account Balance\n4.) Exit Application\n";
-    cout << "What would you like to do: ";
+    cout <<  setfill('#') << setw(60) << '#';
+    cout << "\nWhat would you like to do: ";
     cin >> selection;
     return selection;
 
@@ -55,8 +56,7 @@ int main(){
     //test to see user's name entered correctly
     cout << "\nPleasure to meet you ";
     customer.printName();
-    cout << endl;
-    
+    cout << endl <<  "********I have given you " << transaction.getDeposit() << " to start off with********\n\n";
     do{
         Userselection = userChoice();
         switch (Userselection){
@@ -71,7 +71,10 @@ int main(){
             case 3:
                 cout << endl;
                 transaction.printSummary();
-            case 4: 
+                break;
+            case 4:
+                cout << endl;
+                cout << "Thank you, have a good day!";
                 break;
             default:
                 cout << "Invalid selection, please try again.\n";
@@ -81,5 +84,7 @@ int main(){
 
 
     } while(Userselection!=4);
+
+    cout << endl;
     return 0;
 }

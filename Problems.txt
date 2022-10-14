@@ -4,10 +4,12 @@
     POSSIBLE SOLUTIONS:
     - Maybe run a do while that always ask the user at the beginning what they want to do. Then when they finally
     - hit the exit button then terminate the program
-FIXED
+FIXED:implemented solutions.
 
 
 10/13/2022: 4:35PM
     Ran into a problem where account balance isn't printing out properly.
     POSSIBLE SOLUTIONS:
     -look at print summary function for transaction type class.
+FIXED: Had to ignore ending total, and end up not using it because to resolve ambiguity . So to print account summary at a certain state
+just subtract withdraw amount from deposit amount.
