@@ -31,9 +31,9 @@ void TransactionType::setWithDrawal(double withdraw){
 }
 
 //setter for setting end balance
-// void TransactionType::setEndTotal(double end){
-//     endingTotal = deposit - withdrawal;
-// }
+void TransactionType::setEndTotal(double end){
+    endingTotal = end;
+}
 
 // retrieve deposit number
 double TransactionType::getDeposit() const{
@@ -46,20 +46,15 @@ double TransactionType::getWithdrawal() const{
 }
 
 //retrieve ending total
-// double TransactionType::getEndBalance() const{
-//     return endingTotal;
-// }
+double TransactionType::getEndBalance() const{
+    return endingTotal;
+}
                                     
 
 //parameterized constructor
-TransactionType::TransactionType(string id, double depo, 
-                                double withdraw):
-                                ID(id), deposit(depo), 
-                                withdrawal(withdraw){
-    endingTotal = deposit - withdrawal;
-}
+TransactionType::TransactionType(double depo):deposit(depo){}
 
 // print summary of transaction details
 void TransactionType::printSummary() const{
-    cout << "Account Balance after this session: " << deposit-withdrawal << endl;
+    cout << "Account Balance after this session: " << endingTotal << endl;
 }

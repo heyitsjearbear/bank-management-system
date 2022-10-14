@@ -13,7 +13,7 @@ class TransactionType{
         //default constructor
         TransactionType();
         //parameterized constructor to set members
-        TransactionType(string id, double depo, double withdraw);
+        TransactionType(double depo);
         //print summary of transaction details
         void printSummary() const;
 

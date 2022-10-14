@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <fstream>
 #include "CustomerType.h"
 #include "TransactionType.h"
 
@@ -36,7 +37,7 @@ int userChoice(){
 
 int main(){
     //create transaction object
-    TransactionType transaction;
+    
     string first, last;
 
     //declare and initialize variable that stores user's selection
@@ -45,6 +46,12 @@ int main(){
     //declare and initialize userDepoChoice/userWithdrawChoice
     string userDepoChoice = " ";
     string userWithdrawChoice = " ";
+
+    ifstream iFile;
+    iFile.open("results.txt");
+    string amt;
+    getline(iFile,amt);
+    TransactionType transaction(stod(amt));
 
     //prompt user to input first and last name
     cout << "Hello, what is your first name? ";
@@ -56,7 +63,7 @@ int main(){
     //test to see user's name entered correctly
     cout << "\nPleasure to meet you ";
     customer.printName();
-    cout << endl <<  "********I have given you " << transaction.getDeposit() << " to start off with********\n\n";
+    cout << endl <<  "********You have " << amt << " in your account********\n\n";
     do{
         Userselection = userChoice();
         switch (Userselection){
@@ -70,7 +77,8 @@ int main(){
                 break;
             case 3:
                 cout << endl;
-                transaction.printSummary();
+                //transaction.printSummary();
+                cout << "Current account Balance: $" << transaction.getDeposit()-transaction.getWithdrawal() << endl;
                 break;
             case 4:
                 cout << endl;
@@ -84,6 +92,12 @@ int main(){
 
 
     } while(Userselection!=4);
+
+    cout << "writing results to results.txt\n";
+    ofstream oFile;
+    oFile.open("results.txt");
+    oFile << transaction.getDeposit()-transaction.getWithdrawal();
+    oFile.close();
 
     cout << endl;
     return 0;
