@@ -1,6 +1,6 @@
 IN ORDER OF IMPORTANCE
 
-- Functions to handle invalid input
 - if user selects that they are new append to a file
 - if user selects they are returning read their details from file
 and edit their file
+- Functions to handle invalid input

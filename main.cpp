@@ -64,6 +64,7 @@ int main(){
     cout << "\nPleasure to meet you ";
     customer.printName();
     cout << endl <<  "********You have " << amt << " in your account********\n\n";
+    iFile.close();
     do{
         Userselection = userChoice();
         switch (Userselection){
@@ -93,7 +94,7 @@ int main(){
 
     } while(Userselection!=4);
 
-    cout << "writing results to results.txt\n";
+    cout << "\nwriting results to results.txt\n";
     ofstream oFile;
     oFile.open("results.txt");
     oFile << transaction.getDeposit()-transaction.getWithdrawal();
