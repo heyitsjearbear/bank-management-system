@@ -97,6 +97,7 @@ int main(){
     cout << "\nwriting results to results.txt\n";
     ofstream oFile;
     oFile.open("results.txt");
+    oFile << first << " " << last << endl;
     oFile << transaction.getDeposit()-transaction.getWithdrawal();
     oFile.close();
 
