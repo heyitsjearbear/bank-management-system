@@ -20,3 +20,5 @@ FIXED: Had to step through using debugger to figure out on what line stod except
 
 10/15/2022 9:50AM
     Ran into linking problem when compiling. Seems that compiler can't find definition of my global functions.
+FIXED: Just decided to not create prototypes and signatures separately. I just defined my global functions
+right away inside their header file.

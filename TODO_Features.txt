@@ -1,6 +1,2 @@
 IN ORDER OF IMPORTANCE
-
-- create fstream objects, transaction object, and customer object inside of main,
-    then pass them in as reference inside of paramters of new/prev user functions
-- hide global functions from user, maybe put them inside their own implementation file
 - Functions to handle invalid input
