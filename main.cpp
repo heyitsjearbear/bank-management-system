@@ -107,13 +107,85 @@ void prevUser(){
     
 }
 
+void newUser(){
+    //create transaction object
+    
+    string first, last;
+
+    //declare and initialize variable that stores user's selection
+    int Userselection = 0;
+
+    //declare and initialize userDepoChoice/userWithdrawChoice
+    string userDepoChoice = " ";
+    string userWithdrawChoice = " ";
+
+    //give starting bank account of 100;
+    TransactionType transaction(100);
+
+    //prompt user to input first and last name
+    cout << "Hello, what is your first name? ";
+    cin >> first;
+    cout << "\nHello " << first << ", what is your last name? ";
+    cin >> last;
+    CustomerType customer (transaction, first, last);
+
+    //test to see user's name entered correctly
+    cout << "\nPleasure to meet you ";
+    customer.printName();
+    cout << endl <<  "********You have a starting account balance of $" << transaction.getDeposit() << "********\n\n";
+    do{
+        Userselection = userChoice();
+        switch (Userselection){
+            case 1:
+                cout << endl;
+                transaction.setWithDrawal(askWithDrawal());
+                break;
+            case 2:
+                cout << endl;
+                transaction.setDeposit(askDeposit());
+                break;
+            case 3:
+                cout << endl;
+                //transaction.printSummary();
+                cout << "Current account Balance: $" << transaction.getDeposit()-transaction.getWithdrawal() << endl;
+                break;
+            case 4:
+                cout << endl;
+                cout << "Thank you, have a good day!";
+                break;
+            default:
+                cout << "Invalid selection, please try again.\n";
+                break;
+
+        }
+
+
+    } while(Userselection!=4);
+
+    cout << "\nwriting results to results.txt\n";
+    ofstream oFile;
+    oFile.open("results.txt");
+    oFile << first << " " << last << endl;
+    oFile << transaction.getDeposit()-transaction.getWithdrawal();
+    oFile.close();
+}
+
 int main(){
     string returningUser = "";
-    cout << "Are you a returning user? Type Y or N: ";
-    cin >> returningUser;
-    if(returningUser == "Y"){
-        prevUser();
-    }
+    do{
+        cout << "Are you a returning user? Type Y or N: ";
+        cin >> returningUser;
+        if (returningUser == "Y" || returningUser == "y"){
+            prevUser();
+        } 
+        else if(returningUser == "N" || returningUser == "n"){
+            newUser();
+        } else{
+            returningUser = "Invalid";
+            cout << "\nInvalid input please select yes or no.\n";
+        }
+
+    }while(returningUser == "Invalid");
     cout << endl;
     return 0;
 }
