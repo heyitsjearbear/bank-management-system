@@ -51,6 +51,7 @@ int main(){
     iFile.open("results.txt");
     string amt;
     getline(iFile,amt);
+    getline(iFile,amt);
     TransactionType transaction(stod(amt));
 
     //prompt user to input first and last name

@@ -13,3 +13,7 @@ FIXED:implemented solutions.
     -look at print summary function for transaction type class.
 FIXED: Had to ignore ending total, and end up not using it because to resolve ambiguity . So to print account summary at a certain state
 just subtract withdraw amount from deposit amount.
+
+10/15/2022 9:40PM
+    Ran into bug where where application was reading in the first line as the bank balance, so stod exception was being thrown out.
+FIXED: Had to step through using debugger to figure out on what line stod exception was being thrown.
