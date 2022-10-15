@@ -14,6 +14,9 @@ FIXED:implemented solutions.
 FIXED: Had to ignore ending total, and end up not using it because to resolve ambiguity . So to print account summary at a certain state
 just subtract withdraw amount from deposit amount.
 
-10/15/2022 9:40PM
+10/15/2022 9:40AM
     Ran into bug where where application was reading in the first line as the bank balance, so stod exception was being thrown out.
 FIXED: Had to step through using debugger to figure out on what line stod exception was being thrown.
+
+10/15/2022 9:50AM
+    Ran into linking problem when compiling. Seems that compiler can't find definition of my global functions.
