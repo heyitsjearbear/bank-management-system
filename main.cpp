@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
+#include <sstream>
 #include "CustomerType.h"
 #include "TransactionType.h"
 
@@ -35,10 +36,20 @@ int userChoice(){
 
 }
 
-int main(){
-    //create transaction object
-    
+void prevUser(){
+    //create variables to store previous user's name
     string first, last;
+
+    //retrive user's name
+    //create string stream object to store line of file
+    ifstream iFile;
+    iFile.open("results.txt");
+    string line;
+    getline(iFile,line);
+    stringstream ss(line);
+    getline(ss,first, ' ');
+    getline(ss, last,' ');
+
 
     //declare and initialize variable that stores user's selection
     int Userselection = 0;
@@ -47,24 +58,16 @@ int main(){
     string userDepoChoice = " ";
     string userWithdrawChoice = " ";
 
-    ifstream iFile;
-    iFile.open("results.txt");
     string amt;
-    getline(iFile,amt);
     getline(iFile,amt);
     TransactionType transaction(stod(amt));
 
-    //prompt user to input first and last name
-    cout << "Hello, what is your first name? ";
-    cin >> first;
-    cout << "\nHello " << first << ", what is your last name? ";
-    cin >> last;
     CustomerType customer (transaction, first, last);
 
-    //test to see user's name entered correctly
-    cout << "\nPleasure to meet you ";
+    //WELCOME BACK OUTPUT
+    cout << "\nWELCOME BACK ";
     customer.printName();
-    cout << endl <<  "********You have " << amt << " in your account********\n\n";
+    cout << endl <<  "********You have $" << amt << " in your account********\n\n";
     iFile.close();
     do{
         Userselection = userChoice();
@@ -101,7 +104,16 @@ int main(){
     oFile << first << " " << last << endl;
     oFile << transaction.getDeposit()-transaction.getWithdrawal();
     oFile.close();
+    
+}
 
+int main(){
+    string returningUser = "";
+    cout << "Are you a returning user? Type Y or N: ";
+    cin >> returningUser;
+    if(returningUser == "Y"){
+        prevUser();
+    }
     cout << endl;
     return 0;
 }
